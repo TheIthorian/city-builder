@@ -1,0 +1,10 @@
+{
+  "name": "brick-borough",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A zero-dependency isometric city builder prototype.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "start": "python3 -m http.server 4173"
+  }
+}

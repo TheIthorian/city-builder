@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brick Borough</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="hud">
+        <div class="panel masthead">
+          <p class="eyebrow">PIXEL MUNICIPALITY</p>
+          <h1>Brick Borough</h1>
+          <p class="tagline">
+            Build a tiny living city with chunky isometric tiles, sample citizens,
+            and old-school service headaches.
+          </p>
+        </div>
+
+        <div class="panel">
+          <div class="section-heading">
+            <h2>Tools</h2>
+            <span id="funds-label">$0</span>
+          </div>
+          <div class="tool-grid" id="tool-grid"></div>
+          <p class="hint">
+            Left click to build. Right click to bulldoze. Drag to paint roads and
+            zones.
+          </p>
+        </div>
+
+        <div class="panel stats-grid">
+          <div>
+            <p class="stat-label">Month</p>
+            <p class="stat-value" id="month-label">1</p>
+          </div>
+          <div>
+            <p class="stat-label">Population</p>
+            <p class="stat-value" id="population-label">0</p>
+          </div>
+          <div>
+            <p class="stat-label">Happiness</p>
+            <p class="stat-value" id="happiness-label">0%</p>
+          </div>
+          <div>
+            <p class="stat-label">Treasury</p>
+            <p class="stat-value" id="cashflow-label">$0</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-heading">
+            <h2>Simulation</h2>
+            <div class="speed-controls">
+              <button type="button" class="mini-button" id="pause-button">Pause</button>
+              <button type="button" class="mini-button" id="speed-button">2x</button>
+            </div>
+          </div>
+          <div class="demand-row">
+            <div>
+              <span>Residential</span>
+              <strong id="demand-res">0</strong>
+            </div>
+            <div>
+              <span>Commercial</span>
+              <strong id="demand-com">0</strong>
+            </div>
+            <div>
+              <span>Industrial</span>
+              <strong id="demand-ind">0</strong>
+            </div>
+          </div>
+          <div class="overlay-row">
+            <span>Overlay</span>
+            <div class="overlay-buttons">
+              <button type="button" class="mini-button active" data-overlay="issues">
+                Issues
+              </button>
+              <button type="button" class="mini-button" data-overlay="landValue">
+                Land
+              </button>
+              <button type="button" class="mini-button" data-overlay="services">
+                Services
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel inspector">
+          <div class="section-heading">
+            <h2>Tile</h2>
+            <span id="tile-coords">x0 y0</span>
+          </div>
+          <div id="tile-details" class="tile-details">
+            Hover a tile to inspect it.
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-heading">
+            <h2>Citizen Sample</h2>
+            <span id="employment-label">0% employed</span>
+          </div>
+          <div id="citizen-list" class="citizen-list"></div>
+        </div>
+
+        <div class="panel">
+          <div class="section-heading">
+            <h2>City Wire</h2>
+          </div>
+          <div id="event-log" class="event-log"></div>
+        </div>
+      </aside>
+
+      <main class="viewport-shell">
+        <div class="canvas-frame">
+          <canvas id="game-canvas" width="1440" height="900"></canvas>
+          <div class="topbar">
+            <div class="topbar-pill">
+              <span class="topbar-label">Selected</span>
+              <strong id="selected-tool-label">Residential</strong>
+            </div>
+            <div class="topbar-pill">
+              <span class="topbar-label">Tips</span>
+              <strong id="status-line">Keep roads touching every zone block.</strong>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
