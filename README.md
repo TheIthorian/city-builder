@@ -18,6 +18,17 @@ npm run dev
 
 Then open `http://localhost:4173`.
 
+## Run with Docker
+
+From the repository root:
+
+```bash
+docker build -t city-builder .
+docker run --rm -p 8080:80 city-builder
+```
+
+Then open [http://localhost:8080](http://localhost:8080). The container serves the static game with nginx on port `80`.
+
 ## Controls
 
 - Left click: build with the selected tool
